@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoSharp", "GeoSharp\GeoSharp.csproj", "{91436B4B-F7BF-4A1B-B1AE-72E6D10F41C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoSharp.UnitTest", "GeoSharp.UnitTest\GeoSharp.UnitTest.csproj", "{ECA694D0-5188-4A39-B248-5FE42183D613}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoSharp.Updater", "GeoSharp.Updater\GeoSharp.Updater.csproj", "{CEE868B2-8463-426C-9014-F3CAF82A2645}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91436B4B-F7BF-4A1B-B1AE-72E6D10F41C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91436B4B-F7BF-4A1B-B1AE-72E6D10F41C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91436B4B-F7BF-4A1B-B1AE-72E6D10F41C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91436B4B-F7BF-4A1B-B1AE-72E6D10F41C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECA694D0-5188-4A39-B248-5FE42183D613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECA694D0-5188-4A39-B248-5FE42183D613}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECA694D0-5188-4A39-B248-5FE42183D613}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECA694D0-5188-4A39-B248-5FE42183D613}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEE868B2-8463-426C-9014-F3CAF82A2645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE868B2-8463-426C-9014-F3CAF82A2645}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE868B2-8463-426C-9014-F3CAF82A2645}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE868B2-8463-426C-9014-F3CAF82A2645}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

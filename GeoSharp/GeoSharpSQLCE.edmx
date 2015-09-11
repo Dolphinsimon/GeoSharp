@@ -1,0 +1,63 @@
+﻿<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+<!-- EF Runtime content -->
+<edmx:Runtime>
+<!-- SSDL content -->
+<edmx:StorageModels>
+<Schema Namespace="GeoSharpSQLCEModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="GeoSharpSQLCEModelStoreContainer">
+    <EntitySet Name="GeoInfoSet" EntityType="GeoSharpSQLCEModel.Store.GeoInfoSet" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="GeoInfoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Province" Type="nvarchar" Nullable="false" MaxLength="4000" />
+    <Property Name="City" Type="nvarchar" Nullable="true" MaxLength="4000" />
+    <Property Name="District" Type="nvarchar" Nullable="true" MaxLength="4000" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+<!-- CSDL content -->
+<edmx:ConceptualModels>
+<Schema Namespace="GeoSharpSQLCEModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="GeoSharpSQLCEEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="GeoInfoSet" EntityType="GeoSharpSQLCEModel.GeoInfoSet" />
+  </EntityContainer>
+  <EntityType Name="GeoInfoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Province" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="District" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+  </EntityType>
+</Schema>
+</edmx:ConceptualModels>
+<!-- C-S mapping content -->
+<edmx:Mappings>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GeoSharpSQLCEModelStoreContainer" CdmEntityContainer="GeoSharpSQLCEEntities">
+    <EntitySetMapping Name="GeoInfoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoSharpSQLCEModel.GeoInfoSet)">
+        <MappingFragment StoreEntitySet="GeoInfoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="District" ColumnName="District" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+</edmx:Runtime>
+<!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+<edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+<Connection><DesignerInfoPropertySet><DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" /></DesignerInfoPropertySet></Connection>
+<edmx:Options><DesignerInfoPropertySet><DesignerProperty Name="ValidateOnBuild" Value="True" /><DesignerProperty Name="EnablePluralization" Value="False" /><DesignerProperty Name="IncludeForeignKeysInModel" Value="True" /><DesignerProperty Name="UseLegacyProvider" Value="False" /><DesignerProperty Name="CodeGenerationStrategy" Value="None" /></DesignerInfoPropertySet></edmx:Options>
+<edmx:Diagrams >
+      <Diagram DiagramId="e6ba0c318d194904913ac71c823dae2e" Name="Diagram1">
+        <EntityTypeShape EntityType="GeoSharpSQLCEModel.GeoInfoSet" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+</edmx:Designer></edmx:Edmx>

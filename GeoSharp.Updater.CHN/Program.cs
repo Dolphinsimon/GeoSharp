@@ -1,13 +1,14 @@
 ﻿using System;
+using static System.Console;
 
-namespace GeoSharp
+namespace GeoSharp.CHN
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Please in put the path of data file.");
-            var path=Console.ReadLine();
+            WriteLine("Please input the path of data file.");
+            var path=ReadLine();
             var start = DateTime.Now;
             var s=path?.Replace("\"","");
             var updater=new GeoSharpUpdater();
@@ -15,13 +16,13 @@ namespace GeoSharp
             {
                 updater.Start(s);
                 var end = DateTime.Now;
-                Console.WriteLine($"Process successful!Total time consuming {end-start}");
+                WriteLine($"Process successful!Total time consuming {end-start}");
             }
             catch (Exception e)
             {
-                Console.WriteLine($"Some error occurred! Error message is {e.Message}");
+                WriteLine($"Some error occurred! Error message is {e.Message}");
             }
-            Console.ReadLine();
+            ReadLine();
         }
     }
 }

@@ -7,8 +7,8 @@
     <ProjectGuid>{CEE868B2-8463-426C-9014-F3CAF82A2645}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GeoSharp</RootNamespace>
-    <AssemblyName>GeoSharp.Updater</AssemblyName>
+    <RootNamespace>GeoSharp.CHN</RootNamespace>
+    <AssemblyName>GeoSharp.Updater.CHN</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -6,9 +6,9 @@ For now, there is only PRC's information in this 0.0.1 version.
 
 ###Why I create this project ?
 
-One day I use the wather tools, 
+One day I use a weather app on my Lumia920, 
 I found that the real time search in the software is useful in many area.
-So,I want to create a peoject contains many diffrent geo information, 
+So,I want to create a project contains many diffrent geo information, 
 the only function the project supported is searching the information as fast as possible.
 
 ###How can I get benefit from this project ?

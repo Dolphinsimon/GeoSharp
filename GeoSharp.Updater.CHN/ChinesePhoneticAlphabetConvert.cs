@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using static System.Text.Encoding;
 
-namespace GeoSharp
+namespace GeoSharp.CHN
 {
     public static class ChinesePhoneticAlphabetConvert
     {

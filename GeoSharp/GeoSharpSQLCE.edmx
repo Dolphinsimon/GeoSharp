@@ -5,9 +5,15 @@
 <edmx:StorageModels>
 <Schema Namespace="GeoSharpSQLCEModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="GeoSharpSQLCEModelStoreContainer">
-    <EntitySet Name="GeoInfoSet" EntityType="GeoSharpSQLCEModel.Store.GeoInfoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ISO3166_2_156" EntityType="GeoSharpSQLCEModel.Store.ISO3166_2_156" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ISO3166Set" EntityType="GeoSharpSQLCEModel.Store.ISO3166Set" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ISO3166_1_ALPHA_2" EntityType="GeoSharpSQLCEModel.Store.ISO3166_1_ALPHA_2" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ISO3166_1_ALPHA_3" EntityType="GeoSharpSQLCEModel.Store.ISO3166_1_ALPHA_3" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ISO3166_1_NUMERIC" EntityType="GeoSharpSQLCEModel.Store.ISO3166_1_NUMERIC" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ISO3166_2" EntityType="GeoSharpSQLCEModel.Store.ISO3166_2" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ISO3166_3" EntityType="GeoSharpSQLCEModel.Store.ISO3166_3" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
-  <EntityType Name="GeoInfoSet">
+  <EntityType Name="ISO3166_2_156">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -16,14 +22,70 @@
     <Property Name="City" Type="nvarchar" Nullable="true" MaxLength="4000" />
     <Property Name="District" Type="nvarchar" Nullable="true" MaxLength="4000" />
   </EntityType>
+  <EntityType Name="ISO3166Set">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ISO3166_1_ALPHA_2">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" Nullable="false" />
+    <Property Name="Year" Type="nvarchar" Nullable="false" />
+    <Property Name="ccTLD" Type="nvarchar" Nullable="false" />
+    <Property Name="ISO3166_2" Type="nvarchar" Nullable="false" />
+    <Property Name="Notes" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ISO3166_1_ALPHA_3">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ISO3166_1_NUMERIC">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ISO3166_2">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ISO3166_3">
+    <Key>
+      <PropertyRef Name="FormerCountryName" />
+    </Key>
+    <Property Name="FormerCountryName" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FormerCodes" Type="nvarchar" Nullable="false" />
+    <Property Name="PeriodOfValidity" Type="nvarchar" Nullable="false" />
+    <Property Name="ISO3166_3Code" Type="nvarchar" Nullable="false" />
+    <Property Name="NewCountryName" Type="nvarchar" Nullable="false" />
+    <Property Name="NewCountryCode" Type="nvarchar" Nullable="false" />
+  </EntityType>
 </Schema></edmx:StorageModels>
 <!-- CSDL content -->
 <edmx:ConceptualModels>
 <Schema Namespace="GeoSharpSQLCEModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="GeoSharpSQLCEEntities" p1:LazyLoadingEnabled="true">
-    <EntitySet Name="GeoInfoSet" EntityType="GeoSharpSQLCEModel.GeoInfoSet" />
+    <EntitySet Name="ISO3166_2_156" EntityType="GeoSharpSQLCEModel.ISO3166_2_156" />
+          <EntitySet Name="ISO3166Set" EntityType="GeoSharpSQLCEModel.ISO3166" />
+          <EntitySet Name="ISO3166_1_ALPHA_2" EntityType="GeoSharpSQLCEModel.ISO3166_1_ALPHA_2" />
+          <EntitySet Name="ISO3166_1_ALPHA_3" EntityType="GeoSharpSQLCEModel.ISO3166_1_ALPHA_3" />
+          <EntitySet Name="ISO3166_1_NUMERIC" EntityType="GeoSharpSQLCEModel.ISO3166_1_NUMERIC" />
+          <EntitySet Name="ISO3166_2" EntityType="GeoSharpSQLCEModel.ISO3166_2" />
+          <EntitySet Name="ISO3166_3" EntityType="GeoSharpSQLCEModel.ISO3166_3" />
   </EntityContainer>
-  <EntityType Name="GeoInfoSet">
+  <EntityType Name="ISO3166_2_156">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -32,19 +94,125 @@
     <Property Name="City" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
     <Property Name="District" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
   </EntityType>
+        <EntityType Name="ISO3166">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="ISO3166_1_ALPHA_2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" />
+          <Property Name="CountryName" Type="String" Nullable="false" />
+          <Property Name="Year" Type="String" Nullable="false" />
+          <Property Name="ccTLD" Type="String" Nullable="false" />
+          <Property Name="ISO3166_2" Type="String" Nullable="false" />
+          <Property Name="Notes" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ISO3166_1_ALPHA_3">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" />
+          <Property Name="CountryName" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ISO3166_1_NUMERIC">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CountryName" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ISO3166_2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="ISO3166_3">
+          <Key>
+            <PropertyRef Name="FormerCountryName" />
+          </Key>
+          <Property Name="FormerCountryName" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FormerCodes" Type="String" Nullable="false" />
+          <Property Name="PeriodOfValidity" Type="String" Nullable="false" />
+          <Property Name="ISO3166_3Code" Type="String" Nullable="false" />
+          <Property Name="NewCountryName" Type="String" Nullable="false" />
+          <Property Name="NewCountryCode" Type="String" Nullable="false" />
+        </EntityType>
 </Schema>
 </edmx:ConceptualModels>
 <!-- C-S mapping content -->
 <edmx:Mappings>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="GeoSharpSQLCEModelStoreContainer" CdmEntityContainer="GeoSharpSQLCEEntities">
-    <EntitySetMapping Name="GeoInfoSet">
-      <EntityTypeMapping TypeName="IsTypeOf(GeoSharpSQLCEModel.GeoInfoSet)">
-        <MappingFragment StoreEntitySet="GeoInfoSet">
+    <EntitySetMapping Name="ISO3166_2_156">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoSharpSQLCEModel.ISO3166_2_156)">
+        <MappingFragment StoreEntitySet="ISO3166_2_156">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Province" ColumnName="Province" />
           <ScalarProperty Name="City" ColumnName="City" />
           <ScalarProperty Name="District" ColumnName="District" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ISO3166Set">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoSharpSQLCEModel.ISO3166)">
+        <MappingFragment StoreEntitySet="ISO3166Set">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ISO3166_1_ALPHA_2">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoSharpSQLCEModel.ISO3166_1_ALPHA_2)">
+        <MappingFragment StoreEntitySet="ISO3166_1_ALPHA_2">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="ccTLD" ColumnName="ccTLD" />
+          <ScalarProperty Name="ISO3166_2" ColumnName="ISO3166_2" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ISO3166_1_ALPHA_3">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoSharpSQLCEModel.ISO3166_1_ALPHA_3)">
+        <MappingFragment StoreEntitySet="ISO3166_1_ALPHA_3">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ISO3166_1_NUMERIC">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoSharpSQLCEModel.ISO3166_1_NUMERIC)">
+        <MappingFragment StoreEntitySet="ISO3166_1_NUMERIC">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ISO3166_2">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoSharpSQLCEModel.ISO3166_2)">
+        <MappingFragment StoreEntitySet="ISO3166_2">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ISO3166_3">
+      <EntityTypeMapping TypeName="IsTypeOf(GeoSharpSQLCEModel.ISO3166_3)">
+        <MappingFragment StoreEntitySet="ISO3166_3">
+          <ScalarProperty Name="FormerCountryName" ColumnName="FormerCountryName" />
+          <ScalarProperty Name="FormerCodes" ColumnName="FormerCodes" />
+          <ScalarProperty Name="PeriodOfValidity" ColumnName="PeriodOfValidity" />
+          <ScalarProperty Name="ISO3166_3Code" ColumnName="ISO3166_3Code" />
+          <ScalarProperty Name="NewCountryName" ColumnName="NewCountryName" />
+          <ScalarProperty Name="NewCountryCode" ColumnName="NewCountryCode" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -57,7 +225,13 @@
 <edmx:Options><DesignerInfoPropertySet><DesignerProperty Name="ValidateOnBuild" Value="True" /><DesignerProperty Name="EnablePluralization" Value="False" /><DesignerProperty Name="IncludeForeignKeysInModel" Value="True" /><DesignerProperty Name="UseLegacyProvider" Value="False" /><DesignerProperty Name="CodeGenerationStrategy" Value="None" /></DesignerInfoPropertySet></edmx:Options>
 <edmx:Diagrams >
       <Diagram DiagramId="e6ba0c318d194904913ac71c823dae2e" Name="Diagram1">
-        <EntityTypeShape EntityType="GeoSharpSQLCEModel.GeoInfoSet" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_2_156" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166" Width="1.5" PointX="8.875" PointY="0.75" />
+        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_1_ALPHA_2" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_1_ALPHA_3" Width="1.5" PointX="8.875" PointY="3.5" />
+        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_1_NUMERIC" Width="1.5" PointX="6.125" PointY="3.375" />
+        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_2" Width="1.5" PointX="3.375" PointY="0.875" />
+        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_3" Width="1.5" PointX="3.5" PointY="4" />
       </Diagram>
     </edmx:Diagrams>
 </edmx:Designer></edmx:Edmx>

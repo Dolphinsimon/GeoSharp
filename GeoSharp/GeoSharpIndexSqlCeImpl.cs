@@ -22,10 +22,8 @@ namespace GeoSharp
         /// <summary>
         /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
         /// </summary>
-        public void Dispose()
-        {
-            _entities.Dispose();
-        }
+        public void Dispose() => _entities.Dispose();
+
 
         #endregion
         /// <summary>
@@ -34,20 +32,18 @@ namespace GeoSharp
         /// <param name="id"></param>
         /// <returns></returns>
         private IEnumerable<GeoInfoPRCImpl> FindSqlCe(int id)
-        {
-            return _entities.GeoInfoSet.Where(a => a.Id == id).Select(b => new GeoInfoPRCImpl
+            => _entities.ISO3166_2_156.Where(a => a.Id == id).Select(b => new GeoInfoPRCImpl
             {
                 City = b.City,
                 District = b.District,
                 Id = b.Id,
                 Province = b.Province
             }).ToList();
-        }
+
 
         private IEnumerable<GeoInfoPRCImpl> FindSqlCe(string geoName)
-        {
-            return
-                _entities.GeoInfoSet.Where(
+            =>
+                _entities.ISO3166_2_156.Where(
                     a => a.City.Contains(geoName) || a.Province.Contains(geoName) || a.District.Contains(geoName))
                     .Select(b => new GeoInfoPRCImpl
                     {
@@ -56,17 +52,15 @@ namespace GeoSharp
                         Id = b.Id,
                         Province = b.Province
                     }).ToList();
-        }
+
 
         public IEnumerable<GeoInfoPRCImpl> Find(int id)
-        {
-            return FindSqlCe(id);
-        }
+            => FindSqlCe(id);
+
 
         public IEnumerable<GeoInfoPRCImpl> Find(string geoName)
-        {
-            return FindSqlCe(geoName);
-        }
+            => FindSqlCe(geoName);
+
 
         #region Implementation of IGeoSharpIndex
 

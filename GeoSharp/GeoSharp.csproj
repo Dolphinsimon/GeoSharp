@@ -73,9 +73,6 @@
   <ItemGroup>
     <Compile Include="GeoInfoBase.cs" />
     <Compile Include="GeoInfoPRCImpl.cs" />
-    <Compile Include="GeoInfoSet.cs">
-      <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
-    </Compile>
     <Compile Include="GeoSharpIndexSqlCeImpl.cs" />
     <Compile Include="GeoSharpSQLCE.Context.cs">
       <AutoGen>True</AutoGen>
@@ -93,6 +90,27 @@
       <DependentUpon>GeoSharpSQLCE.edmx</DependentUpon>
     </Compile>
     <Compile Include="IGeoSharpIndex.cs" />
+    <Compile Include="ISO3166.cs">
+      <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ISO3166_1_ALPHA_2.cs">
+      <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ISO3166_1_ALPHA_3.cs">
+      <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ISO3166_1_NUMERIC.cs">
+      <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ISO3166_2.cs">
+      <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ISO3166_2_156.cs">
+      <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ISO3166_3.cs">
+      <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

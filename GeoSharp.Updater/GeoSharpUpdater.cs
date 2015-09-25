@@ -45,6 +45,14 @@ namespace GeoSharp
             return (from Match match in matches select match.Value).FirstOrDefault();
         }
 
+        private void SortGeoInfo(string row)
+        {
+            if (string.IsNullOrWhiteSpace(row)) return;
+            var key = GetNumber(row);
+            var value = GetText(row);
+            _geoInfo.Add(key, value);
+        }
+
         [SuppressMessage("ReSharper", "InvertIf")]
         private static SortedDictionary<int, string[]> FinalizeGeoInfo(SortedDictionary<int, string> dictionary)
         {
@@ -78,16 +86,21 @@ namespace GeoSharp
 
             }
             return geoDic;
-        } 
-
-        private void SortGeoInfo(string row)
-        {
-            if(string.IsNullOrWhiteSpace(row)) return;
-            var key = GetNumber(row);
-            var value = GetText(row);
-            _geoInfo.Add(key,value);
         }
 
+        private static SortedDictionary<int, string[]> AddPinyin(SortedDictionary<int, string[]> geoDic)
+        {
+            foreach (var geo in geoDic)
+            {
+                for (var i = 0; i < geo.Value.Length; i++)
+                {
+                    if(geo.Value[i]==null) continue;
+                    geo.Value[i] += ChinesePhoneticAlphabetConvert.SerilizeChineseCharacter(geo.Value[i]);
+                }
+                
+            }
+            return geoDic;
+        }
 
         private void StoreGeoInfotoSqlCe(SortedDictionary<int, string[]> geoDictionary)
         {
@@ -101,7 +114,7 @@ namespace GeoSharp
                     District = geo.Value[2]
                 }))
                 {
-                    _entities.GeoInfoSet.Add(new GeoInfo
+                    _entities.ISO3166_2_156.Add(new ISO3166_2_156
                     {
                         City = geoInfo.City,
                         District = geoInfo.District,
@@ -114,6 +127,8 @@ namespace GeoSharp
             }
         }
 
+        
+
         public void Start(string path)
         {
             var rows = GetRows(path);
@@ -121,7 +136,7 @@ namespace GeoSharp
             {
                 SortGeoInfo(row);
             }
-            var data=FinalizeGeoInfo(_geoInfo);
+            var data=AddPinyin(FinalizeGeoInfo(_geoInfo));
             StoreGeoInfotoSqlCe(data);
         }
     }

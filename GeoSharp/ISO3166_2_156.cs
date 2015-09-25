@@ -12,7 +12,7 @@ namespace GeoSharp
     using System;
     using System.Collections.Generic;
     
-    public partial class GeoInfoSet
+    public partial class ISO3166_2_156
     {
         public int Id { get; set; }
         public string Province { get; set; }

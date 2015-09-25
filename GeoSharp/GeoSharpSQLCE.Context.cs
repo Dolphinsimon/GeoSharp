@@ -25,6 +25,12 @@ namespace GeoSharp
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<GeoInfoSet> GeoInfoSet { get; set; }
+        public virtual DbSet<ISO3166_2_156> ISO3166_2_156 { get; set; }
+        public virtual DbSet<ISO3166> ISO3166Set { get; set; }
+        public virtual DbSet<ISO3166_1_ALPHA_2> ISO3166_1_ALPHA_2 { get; set; }
+        public virtual DbSet<ISO3166_1_ALPHA_3> ISO3166_1_ALPHA_3 { get; set; }
+        public virtual DbSet<ISO3166_1_NUMERIC> ISO3166_1_NUMERIC { get; set; }
+        public virtual DbSet<ISO3166_2> ISO3166_2 { get; set; }
+        public virtual DbSet<ISO3166_3> ISO3166_3 { get; set; }
     }
 }

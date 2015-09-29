@@ -7,13 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GeoSharp
+namespace GeoSharp.SqlCeImpl
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ISO3166_2
+    public partial class ISO3166_3
     {
-        public int Id { get; set; }
+        public int FormerCountryName { get; set; }
+        public string FormerCodes { get; set; }
+        public string PeriodOfValidity { get; set; }
+        public string ISO3166_3Code { get; set; }
+        public string NewCountryName { get; set; }
+        public string NewCountryCode { get; set; }
     }
 }

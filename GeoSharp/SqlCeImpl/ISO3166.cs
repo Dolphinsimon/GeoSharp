@@ -7,14 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GeoSharp
+namespace GeoSharp.SqlCeImpl
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ISO3166_1_NUMERIC
+    public partial class ISO3166
     {
         public int Id { get; set; }
-        public string CountryName { get; set; }
     }
 }

@@ -52,7 +52,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="nvarchar" Nullable="false" MaxLength="4" />
     <Property Name="CountryName" Type="nvarchar" Nullable="false" />
   </EntityType>
   <EntityType Name="ISO3166_2">
@@ -124,7 +124,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" MaxLength="4" />
           <Property Name="CountryName" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="ISO3166_2">
@@ -229,7 +229,7 @@
         <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166" Width="1.5" PointX="8.875" PointY="0.75" />
         <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_1_ALPHA_2" Width="1.5" PointX="5.75" PointY="0.75" />
         <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_1_ALPHA_3" Width="1.5" PointX="8.875" PointY="3.5" />
-        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_1_NUMERIC" Width="1.5" PointX="6.125" PointY="3.375" />
+        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_1_NUMERIC" Width="1.875" PointX="6.125" PointY="3.375" />
         <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_2" Width="1.5" PointX="3.375" PointY="0.875" />
         <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_3" Width="1.5" PointX="3.5" PointY="4" />
       </Diagram>

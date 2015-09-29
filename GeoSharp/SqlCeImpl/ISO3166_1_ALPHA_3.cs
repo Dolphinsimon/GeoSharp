@@ -7,16 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GeoSharp
+namespace GeoSharp.SqlCeImpl
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ISO3166_2_156
+    public partial class ISO3166_1_ALPHA_3
     {
         public int Id { get; set; }
-        public string Province { get; set; }
-        public string City { get; set; }
-        public string District { get; set; }
+        public string Code { get; set; }
+        public string CountryName { get; set; }
     }
 }

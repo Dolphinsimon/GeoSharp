@@ -7,12 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GeoSharp
+namespace GeoSharp.SqlCeImpl
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ISO3166
+    public partial class ISO3166_2
     {
         public int Id { get; set; }
     }

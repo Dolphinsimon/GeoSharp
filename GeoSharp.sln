@@ -5,11 +5,13 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoSharp", "GeoSharp\GeoSharp.csproj", "{91436B4B-F7BF-4A1B-B1AE-72E6D10F41C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoSharp.UnitTest", "GeoSharp.UnitTest\GeoSharp.UnitTest.csproj", "{ECA694D0-5188-4A39-B248-5FE42183D613}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoSharp.Tests", "GeoSharp.Tests\GeoSharp.Tests.csproj", "{ECA694D0-5188-4A39-B248-5FE42183D613}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoSharp.Updater.CHN", "GeoSharp.Updater.CHN\GeoSharp.Updater.CHN.csproj", "{CEE868B2-8463-426C-9014-F3CAF82A2645}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoSharp.CHN", "GeoSharp.CHN\GeoSharp.CHN.csproj", "{C94DFEA7-7179-4B6A-9025-EA14872AB662}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoSharp.Updater", "GeoSharp.Updater\GeoSharp.Updater.csproj", "{27B2F8BE-7885-48D6-9D73-440CEFC43BF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{C94DFEA7-7179-4B6A-9025-EA14872AB662}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C94DFEA7-7179-4B6A-9025-EA14872AB662}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C94DFEA7-7179-4B6A-9025-EA14872AB662}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27B2F8BE-7885-48D6-9D73-440CEFC43BF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27B2F8BE-7885-48D6-9D73-440CEFC43BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27B2F8BE-7885-48D6-9D73-440CEFC43BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27B2F8BE-7885-48D6-9D73-440CEFC43BF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

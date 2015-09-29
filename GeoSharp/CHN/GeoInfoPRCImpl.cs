@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using GeoSharp.SqlCeImpl;
 
-namespace GeoSharp
+namespace GeoSharp.CHN
 {
     // ReSharper disable once InconsistentNaming
     public class GeoInfoPRCImpl:GeoInfoBase

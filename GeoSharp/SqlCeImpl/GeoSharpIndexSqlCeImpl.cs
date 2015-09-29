@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using GeoSharp.CHN;
 
-namespace GeoSharp
+namespace GeoSharp.SqlCeImpl
 {
     public class GeoSharpIndexSqlCeImpl:IGeoSharpIndex,IDisposable
     {

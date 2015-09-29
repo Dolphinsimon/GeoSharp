@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server Compact Edition
 -- --------------------------------------------------
--- Date Created: 09/25/2015 10:52:10
--- Generated from EDMX file: D:\DevDocs\GeoSharp\GeoSharp\GeoSharpSQLCE.edmx
+-- Date Created: 09/28/2015 12:14:57
+-- Generated from EDMX file: D:\DevDocs\GeoSharp\GeoSharp\SqlCeImpl\GeoSharpSQLCE.edmx
 -- --------------------------------------------------
 
 
@@ -74,7 +74,7 @@ GO
 
 -- Creating table 'ISO3166_1_NUMERIC'
 CREATE TABLE [ISO3166_1_NUMERIC] (
-    [Id] int IDENTITY(1,1) NOT NULL,
+    [Id] nvarchar(4)  NOT NULL,
     [CountryName] nvarchar(4000)  NOT NULL
 );
 GO

@@ -1,8 +1,7 @@
-﻿using System.Diagnostics;
-using System.Linq;
+﻿using GeoSharp.CHN;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace GeoSharp
+namespace GeoSharp.Tests
 {
     [TestClass]
     // ReSharper disable once InconsistentNaming
@@ -13,7 +12,7 @@ namespace GeoSharp
         {
             const int s=110000;
             var t=GeoInfoPRCImpl.Find(s);
-            Debug.WriteLine(t.Count());
+            Assert.IsNotNull(t);
         }
 
         [TestMethod]
@@ -21,7 +20,7 @@ namespace GeoSharp
         {
             const string s = "徐州";
             var t = GeoInfoPRCImpl.Find(s);
-            Debug.WriteLine(t.Count());
+            Assert.IsNotNull(t);
         }
     }
 }

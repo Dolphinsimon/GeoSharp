@@ -71,45 +71,57 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CHN\GeoInfoPRCImpl.cs" />
+    <None Include="SqLiteImpl\DataAccess.cs" />
     <Compile Include="GeoInfoBase.cs" />
-    <Compile Include="GeoInfoPRCImpl.cs" />
-    <Compile Include="GeoSharpIndexSqlCeImpl.cs" />
-    <Compile Include="GeoSharpSQLCE.Context.cs">
+    <Compile Include="SqlCeImpl\GeoSharpIndexSqlCeImpl.cs" />
+    <None Include="SqLiteImpl\GeoSharpIndexSqLiteImpl.cs" />
+    <Compile Include="SqlCeImpl\GeoSharpSQLCE.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GeoSharpSQLCE.Context.tt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="GeoSharpSQLCE.cs">
+    <Compile Include="SqlCeImpl\GeoSharpSQLCE.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="GeoSharpSQLCE.Designer.cs">
+    <Compile Include="SqlCeImpl\GeoSharpSQLCE.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GeoSharpSQLCE.edmx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="IGeoSharpIndex.cs" />
-    <Compile Include="ISO3166.cs">
+    <Compile Include="SqlCeImpl\ISO3166.cs">
       <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="ISO3166_1_ALPHA_2.cs">
+    <Compile Include="SqlCeImpl\ISO3166_1_ALPHA_2.cs">
       <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="ISO3166_1_ALPHA_3.cs">
+    <Compile Include="SqlCeImpl\ISO3166_1_ALPHA_3.cs">
       <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="ISO3166_1_NUMERIC.cs">
+    <Compile Include="SqlCeImpl\ISO3166_1_NUMERIC.cs">
       <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="ISO3166_2.cs">
+    <Compile Include="SqlCeImpl\ISO3166_2.cs">
       <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="ISO3166_2_156.cs">
+    <Compile Include="SqlCeImpl\ISO3166_2_156.cs">
       <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="ISO3166_3.cs">
+    <Compile Include="SqlCeImpl\ISO3166_3.cs">
       <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -117,30 +129,32 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="GeoSharp.SQLite" />
-    <EntityDeploy Include="GeoSharpSQLCE.edmx">
+    <None Include="SqLiteImpl\GeoSharp.SQLite" />
+    <EntityDeploy Include="SqlCeImpl\GeoSharpSQLCE.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>GeoSharpSQLCE.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EntityDeploy>
-    <None Include="GeoSharpSQLCEedmx.diagram">
+    <None Include="SqlCeImpl\GeoSharpSQLCEedmx.diagram">
       <DependentUpon>GeoSharpSQLCE.edmx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="GeoSharp.SQLCE.sdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="GeoSharpSQLCE.Context.tt">
+    <Content Include="SqlCeImpl\GeoSharp.SQLCE.sdf" />
+    <Content Include="SqlCeImpl\GeoSharpSQLCE.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoSharpSQLCE.Context.cs</LastGenOutput>
       <DependentUpon>GeoSharpSQLCE.edmx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="GeoSharpSQLCE.edmx.sql" />
-    <Content Include="GeoSharpSQLCE.tt">
+    <Content Include="SqlCeImpl\GeoSharpSQLCE.edmx.sql" />
+    <Content Include="SqlCeImpl\GeoSharpSQLCE.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoSharpSQLCE.cs</LastGenOutput>
       <DependentUpon>GeoSharpSQLCE.edmx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

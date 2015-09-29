@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Transactions;
+using GeoSharp.SqlCeImpl;
 
 namespace GeoSharp.CHN
 {

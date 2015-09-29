@@ -80,48 +80,38 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GeoSharpSQLCE.Context.tt</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="SqlCeImpl\GeoSharpSQLCE.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="SqlCeImpl\GeoSharpSQLCE.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GeoSharpSQLCE.edmx</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="IGeoSharpIndex.cs" />
     <Compile Include="SqlCeImpl\ISO3166.cs">
       <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="SqlCeImpl\ISO3166_1_ALPHA_2.cs">
       <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="SqlCeImpl\ISO3166_1_ALPHA_3.cs">
       <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="SqlCeImpl\ISO3166_1_NUMERIC.cs">
       <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="SqlCeImpl\ISO3166_2.cs">
       <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="SqlCeImpl\ISO3166_2_156.cs">
       <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="SqlCeImpl\ISO3166_3.cs">
       <DependentUpon>GeoSharpSQLCE.tt</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -133,11 +123,9 @@
     <EntityDeploy Include="SqlCeImpl\GeoSharpSQLCE.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>GeoSharpSQLCE.Designer.cs</LastGenOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EntityDeploy>
     <None Include="SqlCeImpl\GeoSharpSQLCEedmx.diagram">
       <DependentUpon>GeoSharpSQLCE.edmx</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -147,14 +135,12 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoSharpSQLCE.Context.cs</LastGenOutput>
       <DependentUpon>GeoSharpSQLCE.edmx</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="SqlCeImpl\GeoSharpSQLCE.edmx.sql" />
     <Content Include="SqlCeImpl\GeoSharpSQLCE.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GeoSharpSQLCE.cs</LastGenOutput>
       <DependentUpon>GeoSharpSQLCE.edmx</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

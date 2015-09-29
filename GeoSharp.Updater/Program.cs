@@ -17,7 +17,7 @@ namespace GeoSharp.Updater
             var updater = new GeoSharpUpdater();
             try
             {
-                updater.Start(s);
+                updater.StartISO3166_1_NUMERIC(s);
                 var end = DateTime.Now;
                 WriteLine($"Process successful!Total time consuming {end - start}");
             }
@@ -27,6 +27,25 @@ namespace GeoSharp.Updater
             }
         }
 
+        private static void processISO3166_1_ALPHA_3()
+        {
+            WriteLine("Now we will update the ISO 3166-1 alpha 3.");
+            WriteLine("Please input the path of a data file.");
+            var path = ReadLine();
+            var s = path?.Replace("\"", "");
+            var start = DateTime.Now;
+            var updater = new GeoSharpUpdater();
+            try
+            {
+                updater.StaartISO3166_1_ALPHA_3(s);
+                var end = DateTime.Now;
+                WriteLine($"Process successful!Total time consuming {end - start}");
+            }
+            catch (Exception e)
+            {
+                WriteLine($"Some error occurred! Error message is {e.Message}");
+            }
+        }
         [SuppressMessage("ReSharper", "FunctionNeverReturns")]
         [SuppressMessage("ReSharper", "UnusedParameter.Local")]
         static void Main(string[] args)
@@ -34,7 +53,7 @@ namespace GeoSharp.Updater
             while (true)
             {
                 WriteLine("This application can handle these data updating request:");
-                WriteLine("1.ISO 3166-1 numeric 2.");
+                WriteLine("1.ISO 3166-1 numeric 2.ISO 3166-1 alpha 3 ");
                 WriteLine("Please input the number you need.");
                 var choice = ReadLine();
                 WriteLine($"Your choice is {choice}. Input y to confirm or n to cancel.");
@@ -46,6 +65,9 @@ namespace GeoSharp.Updater
                     {
                         case "1":
                             processISO3166_1_NUMERIC();
+                            break;
+                        case "2":
+                            processISO3166_1_ALPHA_3();
                             break;
                         default:
                             WriteLine("Unsupported input string!process terminated,application will start over after 3 seconds.");

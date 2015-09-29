@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server Compact Edition
 -- --------------------------------------------------
--- Date Created: 09/28/2015 12:14:57
+-- Date Created: 09/29/2015 16:55:46
 -- Generated from EDMX file: D:\DevDocs\GeoSharp\GeoSharp\SqlCeImpl\GeoSharpSQLCE.edmx
 -- --------------------------------------------------
 
@@ -48,26 +48,25 @@ GO
 
 -- Creating table 'ISO3166Set'
 CREATE TABLE [ISO3166Set] (
-    [Id] int IDENTITY(1,1) NOT NULL
+    [Id] int  NOT NULL,
+    [Name] nvarchar(4000)  NOT NULL
 );
 GO
 
 -- Creating table 'ISO3166_1_ALPHA_2'
 CREATE TABLE [ISO3166_1_ALPHA_2] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [Code] nvarchar(4000)  NOT NULL,
+    [Code] nvarchar(4)  NOT NULL,
     [CountryName] nvarchar(4000)  NOT NULL,
-    [Year] nvarchar(4000)  NOT NULL,
-    [ccTLD] nvarchar(4000)  NOT NULL,
-    [ISO3166_2] nvarchar(4000)  NOT NULL,
-    [Notes] nvarchar(4000)  NOT NULL
+    [Year] smallint  NOT NULL,
+    [ccTLD] nvarchar(16)  NOT NULL,
+    [ISO3166_2] nvarchar(16)  NOT NULL,
+    [Notes] nvarchar(4000)  NULL
 );
 GO
 
 -- Creating table 'ISO3166_1_ALPHA_3'
 CREATE TABLE [ISO3166_1_ALPHA_3] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [Code] nvarchar(4000)  NOT NULL,
+    [Code] nvarchar(8)  NOT NULL,
     [CountryName] nvarchar(4000)  NOT NULL
 );
 GO
@@ -81,7 +80,9 @@ GO
 
 -- Creating table 'ISO3166_2'
 CREATE TABLE [ISO3166_2] (
-    [Id] int IDENTITY(1,1) NOT NULL
+    [Entry] nvarchar(4000)  NOT NULL,
+    [CountryName] nvarchar(4000)  NOT NULL,
+    [SubdivisionsAssignedCodes] nvarchar(4000)  NOT NULL
 );
 GO
 
@@ -112,16 +113,16 @@ ADD CONSTRAINT [PK_ISO3166Set]
     PRIMARY KEY ([Id] );
 GO
 
--- Creating primary key on [Id] in table 'ISO3166_1_ALPHA_2'
+-- Creating primary key on [Code] in table 'ISO3166_1_ALPHA_2'
 ALTER TABLE [ISO3166_1_ALPHA_2]
 ADD CONSTRAINT [PK_ISO3166_1_ALPHA_2]
-    PRIMARY KEY ([Id] );
+    PRIMARY KEY ([Code] );
 GO
 
--- Creating primary key on [Id] in table 'ISO3166_1_ALPHA_3'
+-- Creating primary key on [Code] in table 'ISO3166_1_ALPHA_3'
 ALTER TABLE [ISO3166_1_ALPHA_3]
 ADD CONSTRAINT [PK_ISO3166_1_ALPHA_3]
-    PRIMARY KEY ([Id] );
+    PRIMARY KEY ([Code] );
 GO
 
 -- Creating primary key on [Id] in table 'ISO3166_1_NUMERIC'
@@ -130,10 +131,10 @@ ADD CONSTRAINT [PK_ISO3166_1_NUMERIC]
     PRIMARY KEY ([Id] );
 GO
 
--- Creating primary key on [Id] in table 'ISO3166_2'
+-- Creating primary key on [Entry] in table 'ISO3166_2'
 ALTER TABLE [ISO3166_2]
 ADD CONSTRAINT [PK_ISO3166_2]
-    PRIMARY KEY ([Id] );
+    PRIMARY KEY ([Entry] );
 GO
 
 -- Creating primary key on [FormerCountryName] in table 'ISO3166_3'

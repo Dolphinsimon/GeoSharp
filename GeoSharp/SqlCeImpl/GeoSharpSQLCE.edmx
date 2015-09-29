@@ -26,26 +26,25 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" />
   </EntityType>
   <EntityType Name="ISO3166_1_ALPHA_2">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="Code" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Code" Type="nvarchar" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="4" />
     <Property Name="CountryName" Type="nvarchar" Nullable="false" />
-    <Property Name="Year" Type="nvarchar" Nullable="false" />
-    <Property Name="ccTLD" Type="nvarchar" Nullable="false" />
-    <Property Name="ISO3166_2" Type="nvarchar" Nullable="false" />
-    <Property Name="Notes" Type="nvarchar" Nullable="false" />
+    <Property Name="Year" Type="smallint" Nullable="false" />
+    <Property Name="ccTLD" Type="nvarchar" Nullable="false" MaxLength="16" />
+    <Property Name="ISO3166_2" Type="nvarchar" Nullable="false" MaxLength="16" />
+    <Property Name="Notes" Type="nvarchar" Nullable="true" />
   </EntityType>
   <EntityType Name="ISO3166_1_ALPHA_3">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="Code" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Code" Type="nvarchar" Nullable="false" />
+    <Property Name="Code" Type="nvarchar" Nullable="false" MaxLength="8" />
     <Property Name="CountryName" Type="nvarchar" Nullable="false" />
   </EntityType>
   <EntityType Name="ISO3166_1_NUMERIC">
@@ -57,9 +56,11 @@
   </EntityType>
   <EntityType Name="ISO3166_2">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="Entry" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Entry" Type="nvarchar" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" Nullable="false" />
+    <Property Name="SubdivisionsAssignedCodes" Type="nvarchar" Nullable="false" />
   </EntityType>
   <EntityType Name="ISO3166_3">
     <Key>
@@ -98,40 +99,41 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Name" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="ISO3166_1_ALPHA_2">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="Code" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Code" Type="String" Nullable="false" />
-          <Property Name="CountryName" Type="String" Nullable="false" />
-          <Property Name="Year" Type="String" Nullable="false" />
-          <Property Name="ccTLD" Type="String" Nullable="false" />
-          <Property Name="ISO3166_2" Type="String" Nullable="false" />
-          <Property Name="Notes" Type="String" Nullable="false" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="4" />
+          <Property Name="CountryName" Type="String" Nullable="false" Unicode="true" />
+          <Property Name="Year" Type="Int16" Nullable="false" />
+          <Property Name="ccTLD" Type="String" Nullable="false" MaxLength="16" />
+          <Property Name="ISO3166_2" Type="String" Nullable="false" MaxLength="16" />
+          <Property Name="Notes" Type="String" Nullable="true" Unicode="true" />
         </EntityType>
         <EntityType Name="ISO3166_1_ALPHA_3">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="Code" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Code" Type="String" Nullable="false" />
-          <Property Name="CountryName" Type="String" Nullable="false" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="8" />
+          <Property Name="CountryName" Type="String" Nullable="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ISO3166_1_NUMERIC">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" MaxLength="4" />
-          <Property Name="CountryName" Type="String" Nullable="false" />
+          <Property Name="CountryName" Type="String" Nullable="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ISO3166_2">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="Entry" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Entry" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="CountryName" Type="String" Nullable="false" />
+          <Property Name="SubdivisionsAssignedCodes" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="ISO3166_3">
           <Key>
@@ -164,13 +166,13 @@
       <EntityTypeMapping TypeName="IsTypeOf(GeoSharpSQLCEModel.ISO3166)">
         <MappingFragment StoreEntitySet="ISO3166Set">
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ISO3166_1_ALPHA_2">
       <EntityTypeMapping TypeName="IsTypeOf(GeoSharpSQLCEModel.ISO3166_1_ALPHA_2)">
         <MappingFragment StoreEntitySet="ISO3166_1_ALPHA_2">
-          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Code" ColumnName="Code" />
           <ScalarProperty Name="CountryName" ColumnName="CountryName" />
           <ScalarProperty Name="Year" ColumnName="Year" />
@@ -183,7 +185,6 @@
     <EntitySetMapping Name="ISO3166_1_ALPHA_3">
       <EntityTypeMapping TypeName="IsTypeOf(GeoSharpSQLCEModel.ISO3166_1_ALPHA_3)">
         <MappingFragment StoreEntitySet="ISO3166_1_ALPHA_3">
-          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Code" ColumnName="Code" />
           <ScalarProperty Name="CountryName" ColumnName="CountryName" />
         </MappingFragment>
@@ -200,7 +201,9 @@
     <EntitySetMapping Name="ISO3166_2">
       <EntityTypeMapping TypeName="IsTypeOf(GeoSharpSQLCEModel.ISO3166_2)">
         <MappingFragment StoreEntitySet="ISO3166_2">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Entry" ColumnName="Entry" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="SubdivisionsAssignedCodes" ColumnName="SubdivisionsAssignedCodes" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -224,14 +227,20 @@
 <Connection><DesignerInfoPropertySet><DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" /></DesignerInfoPropertySet></Connection>
 <edmx:Options><DesignerInfoPropertySet><DesignerProperty Name="ValidateOnBuild" Value="True" /><DesignerProperty Name="EnablePluralization" Value="False" /><DesignerProperty Name="IncludeForeignKeysInModel" Value="True" /><DesignerProperty Name="UseLegacyProvider" Value="False" /><DesignerProperty Name="CodeGenerationStrategy" Value="None" /></DesignerInfoPropertySet></edmx:Options>
 <edmx:Diagrams >
-      <Diagram DiagramId="e6ba0c318d194904913ac71c823dae2e" Name="Diagram1">
-        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_2_156" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166" Width="1.5" PointX="8.875" PointY="0.75" />
-        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_1_ALPHA_2" Width="1.5" PointX="5.75" PointY="0.75" />
-        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_1_ALPHA_3" Width="1.5" PointX="8.875" PointY="3.5" />
-        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_1_NUMERIC" Width="1.875" PointX="6.125" PointY="3.375" />
-        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_2" Width="1.5" PointX="3.375" PointY="0.875" />
-        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_3" Width="1.5" PointX="3.5" PointY="4" />
+      <Diagram DiagramId="e6ba0c318d194904913ac71c823dae2e" Name="ISO3166_2">
+        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_2_156" Width="1.625" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_2" Width="2.25" PointX="0.75" PointY="3.75" IsExpanded="true" />
+      </Diagram>
+      <Diagram DiagramId="2a91160686114df599c275a63b42aa84" Name="ISO3166" >
+        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166" Width="1.5" PointX="0.75" PointY="0.75" />
+      </Diagram>
+      <Diagram DiagramId="2264d63df3cf49cb9b8e566100955275" Name="ISO3166_1" >
+        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_1_NUMERIC" Width="1.875" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_1_ALPHA_2" Width="1.875" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_1_ALPHA_3" Width="1.875" PointX="0.75" PointY="3.75" />
+      </Diagram>
+      <Diagram DiagramId="5654a7934b5042258ac6d1c23f178976" Name="ISO3166_3" >
+        <EntityTypeShape EntityType="GeoSharpSQLCEModel.ISO3166_3" Width="1.875" PointX="0.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
 </edmx:Designer></edmx:Edmx>

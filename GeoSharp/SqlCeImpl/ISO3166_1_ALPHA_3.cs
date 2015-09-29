@@ -14,7 +14,6 @@ namespace GeoSharp.SqlCeImpl
     
     public partial class ISO3166_1_ALPHA_3
     {
-        public int Id { get; set; }
         public string Code { get; set; }
         public string CountryName { get; set; }
     }

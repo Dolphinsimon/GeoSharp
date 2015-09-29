@@ -23,7 +23,7 @@ namespace GeoSharp.Updater
         /// <returns>An array that contains every row.</returns>
         private static IEnumerable<string> GetRows(string filePath)
         {
-            using (var reader = new StreamReader(filePath, Encoding.UTF8))
+            using (var reader = new StreamReader(filePath, Encoding.Unicode))
             {
                 return reader.ReadToEnd().Split('\n');
             }
@@ -47,7 +47,8 @@ namespace GeoSharp.Updater
             return (from Match match in matches select match.Value).FirstOrDefault();
         }
 
-        private void SortGeoInfo(string row)
+
+        private void SortISO3166_1_NUMERIC(string row)
         {
             if (string.IsNullOrWhiteSpace(row)) return;
             var key = GetNumber(row);
@@ -55,8 +56,16 @@ namespace GeoSharp.Updater
             _geoInfo.Add(key, value);
         }
 
+        private void SortISO3166_1_ALPHA_3(string row)
+        {
+            if (string.IsNullOrWhiteSpace(row)) return;
+            var formatRow = row.Replace("\t", "").Replace("\r","");
+            var key = formatRow.Substring(0, 3);
+            var value = formatRow.Substring(3);
+            _geoInfo.Add(key, value);
+        }
 
-        private void StoreGeoInfotoSqlCe(SortedDictionary<string, string> geoDictionary)
+        private void StoreISO3166_1_NUMERICtoSqlCe(SortedDictionary<string, string> geoDictionary)
         {
             using (var trans=new TransactionScope())
             {
@@ -73,16 +82,43 @@ namespace GeoSharp.Updater
             }
         }
 
+        private void StoreISO3166_1_ALPHA_3toSqlCe(SortedDictionary<string, string> geoDictionary)
+        {
+            using (var trans = new TransactionScope())
+            {
+                foreach (var geoInfo in geoDictionary)
+                {
+                    _entities.ISO3166_1_ALPHA_3.Add(new ISO3166_1_ALPHA_3
+                    {
+                        Code = geoInfo.Key,
+                        CountryName = geoInfo.Value
+                    });
+                }
+                _entities.SaveChanges();
+                trans.Complete();
+            }
+        }
+
         
 
-        public void Start(string path)
+        public void StartISO3166_1_NUMERIC(string path)
         {
             var rows = GetRows(path);
             foreach (var row in rows)
             {
-                SortGeoInfo(row);
+                SortISO3166_1_NUMERIC(row);
             }
-            StoreGeoInfotoSqlCe(_geoInfo);
+            StoreISO3166_1_NUMERICtoSqlCe(_geoInfo);
+        }
+
+        public void StaartISO3166_1_ALPHA_3(string path)
+        {
+            var rows = GetRows(path);
+            foreach (var row in rows)
+            {
+                SortISO3166_1_ALPHA_3(row);
+            }
+            StoreISO3166_1_ALPHA_3toSqlCe(_geoInfo);
         }
     }
 }

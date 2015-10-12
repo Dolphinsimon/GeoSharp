@@ -70,6 +70,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GeoSharp.CHN\GeoSharp.CHN.csproj">
+      <Project>{C94DFEA7-7179-4B6A-9025-EA14872AB662}</Project>
+      <Name>GeoSharp.CHN</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GeoSharp\GeoSharp.csproj">
       <Project>{91436b4b-f7bf-4a1b-b1ae-72e6d10f41c5}</Project>
       <Name>GeoSharp</Name>

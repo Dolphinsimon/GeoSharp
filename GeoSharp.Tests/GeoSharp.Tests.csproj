@@ -71,6 +71,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GeoSharp.CHN\GeoSharp.CHN.csproj">
+      <Project>{C94DFEA7-7179-4B6A-9025-EA14872AB662}</Project>
+      <Name>GeoSharp.CHN</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GeoSharp\GeoSharp.csproj">
       <Project>{91436B4B-F7BF-4A1B-B1AE-72E6D10F41C5}</Project>
       <Name>GeoSharp</Name>

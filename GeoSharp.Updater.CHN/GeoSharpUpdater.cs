@@ -107,20 +107,14 @@ namespace GeoSharp.CHN
         {
             using (var trans=new TransactionScope())
             {
-                foreach (var geoInfo in geoDictionary.Select(geo => new GeoInfoPRCImpl
-                {
-                    Id = geo.Key,
-                    Province = geo.Value[0],
-                    City = geo.Value[1],
-                    District = geo.Value[2]
-                }))
+                foreach (var geoInfo in geoDictionary)
                 {
                     _entities.ISO3166_2_156.Add(new ISO3166_2_156
                     {
-                        City = geoInfo.City,
-                        District = geoInfo.District,
-                        Id = geoInfo.Id,
-                        Province = geoInfo.Province
+                        City = geoInfo.Value[1],
+                        District = geoInfo.Value[2],
+                        Id = geoInfo.Key,
+                        Province = geoInfo.Value[0]
                     }); 
                 }
                 _entities.SaveChanges();

@@ -10,16 +10,18 @@ namespace GeoSharp.Tests
         [TestMethod]
         public void TestFind()
         {
+            var geo = new GeoInfoCHNImpl();
             const int s=110000;
-            var t=GeoInfoPRCImpl.Find(s);
+            var t=geo.Find(geo,s);
             Assert.IsNotNull(t);
         }
 
         [TestMethod]
         public void TestFindString()
         {
+            var geo = new GeoInfoCHNImpl();
             const string s = "徐州";
-            var t = GeoInfoPRCImpl.Find(s);
+            var t = geo.Find(geo,s);
             Assert.IsNotNull(t);
         }
     }

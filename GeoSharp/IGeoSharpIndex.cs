@@ -2,10 +2,10 @@
 
 namespace GeoSharp
 {
-    public interface IGeoSharpIndex
+    interface IGeoSharpIndex
     {
-        IEnumerable<GeoInfoBase> Find(int id);
-        IEnumerable<GeoInfoBase> Find(string geoName);
+        IEnumerable<T> Find<T>(T t, int id) where T : GeoInfoBase;
+        IEnumerable<T> Find<T>(T t,string geoName) where T: GeoInfoBase;
     }
 
 }

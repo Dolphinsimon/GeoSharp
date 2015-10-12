@@ -71,7 +71,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CHN\GeoInfoPRCImpl.cs" />
     <None Include="SqLiteImpl\DataAccess.cs" />
     <Compile Include="GeoInfoBase.cs" />
     <Compile Include="SqlCeImpl\GeoSharpIndexSqlCeImpl.cs" />
